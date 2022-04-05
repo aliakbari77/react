@@ -10,6 +10,9 @@ import auth from "./services/authService";
 import Logout from "./components/logout";
 import "bootstrap/dist/css/bootstrap.css";
 import "react-toastify/dist/ReactToastify.css";
+import Users from "./components/Users";
+import Profile from "./components/profile";
+import UserForm from "./components/userForm";
 
 class App extends Component {
   state = {};
@@ -26,6 +29,9 @@ class App extends Component {
         <NavBar user={user} />
         <div className="container p-3">
           <Switch>
+            <Route path="/users/:id" component={UserForm} />
+            <Route path="/profile" component={Profile} />
+            <Route path="/customers" component={Users} />
             <Route path="/logout" component={Logout} />
             <Route path="/login" component={LoginForm} />
             <Route path="/register" component={RegisterForm} />

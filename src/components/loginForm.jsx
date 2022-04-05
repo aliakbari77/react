@@ -23,7 +23,6 @@ class LoginForm extends Form {
       const { data } = this.state;
       console.log(data);
       await auth.login(data.username, data.password);
-      toast.success("Login Successfully.");
       window.location = "/";
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
