@@ -1,10 +1,10 @@
 import TableHeader from "./tableHeader";
 import TableBody from "./tableBody";
 
-const Table = ({ columns, data }) => {
+const Table = ({ columns, data, sortColumn, onSort }) => {
   return (
     <table className="table">
-      <TableHeader columns={columns} />
+      <TableHeader columns={columns} sortColumn={sortColumn} onSort={onSort} />
       <TableBody data={data} columns={columns} />
     </table>
   );

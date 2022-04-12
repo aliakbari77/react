@@ -11,7 +11,7 @@ class NavBar extends Component {
         </NavLink>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <NavLink className="nav-item nav-link" to="/movie">
+            <NavLink className="nav-item nav-link" to="/movies">
               Movie
             </NavLink>
             <NavLink className="nav-item nav-link" to="/customers">

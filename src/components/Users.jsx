@@ -8,10 +8,14 @@ import { toast, ToastContainer } from "react-toastify";
 class Users extends Component {
   state = {
     users: [],
+    errors: {},
   };
+
   async componentDidMount() {
-    const { data: users } = await user.getAllUsers();
-    this.setState({ users });
+    try {
+      const { data: users } = await user.getAllUsers();
+      this.setState({ users });
+    } catch (ex) {}
   }
 
   handleDelete = async (user) => {
@@ -28,6 +32,8 @@ class Users extends Component {
   };
   render() {
     const { users } = this.state;
+    console.log(users);
+
     return (
       <div>
         <ToastContainer />

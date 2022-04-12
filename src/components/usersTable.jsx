@@ -40,19 +40,8 @@ class UsersTable extends Component {
     }
   };
 
-  editColumn = () => {
-    const user = auth.getCurrentUser();
-    if (user) {
-      this.columns.push({
-        key: "edit",
-        content: (user) => <button className="btn btn-primary">Edit</button>,
-      });
-    }
-  };
-
   componentDidMount() {
     this.deleteColumn();
-    this.editColumn();
   }
 
   render() {

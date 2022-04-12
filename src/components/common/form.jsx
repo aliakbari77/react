@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Joi from "joi-browser";
 import Input from "./input";
 import Button from "./button";
+import Select from "./select";
 
 class Form extends Component {
   state = {
@@ -60,6 +61,12 @@ class Form extends Component {
 
   renderButton(label) {
     return <Button disabled={this.validate()} label={label} />;
+  }
+
+  renderSelectInput(name, label, error, options) {
+    return (
+      <Select name={name} label={label} options={options} error={error[name]} />
+    );
   }
 }
 

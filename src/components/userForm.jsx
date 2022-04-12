@@ -17,7 +17,7 @@ class UserForm extends Form {
 
   schema = {
     name: Joi.string().min(5).required().label("Name"),
-    username: Joi.string().min(5).required().label("Username"),
+    username: Joi.string().min(3).required().label("Username"),
     email: Joi.string().email().required().label("Email"),
   };
 

@@ -4,6 +4,7 @@ import jwtDecode from "jwt-decode";
 
 const apiEndPoint = config.apiUrl + "/auth";
 const tokenKey = "token";
+http.setJwt(getJwt());
 
 async function login(email, password) {
   const { data } = await http.post(apiEndPoint, { email, password });
@@ -25,6 +26,10 @@ function getCurrentUser() {
 
 function logout() {
   localStorage.removeItem(tokenKey);
+}
+
+export function getJwt() {
+  return localStorage.getItem(tokenKey);
 }
 
 export default {
